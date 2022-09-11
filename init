@@ -59,7 +59,7 @@ fi
 # Create user/group
 addgroup --quiet --gid "$YOUTUBEDLPGID" dockeruser
 chown -R "$YOUTUBEDLPUID":"$YOUTUBEDLPGID" /home/dockeruser
-adduser --quiet --system --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --home /home/dockeruser dockeruser
+adduser --quiet --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --home /home/dockeruser dockeruser
 chown -R "$YOUTUBEDLPUID":"$YOUTUBEDLPGID" /usr/local/bin/yt-dlp
 chmod u+s /usr/local/bin/yt-dlp
 HOME=/home/dockeruser
