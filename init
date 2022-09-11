@@ -59,11 +59,11 @@ fi
 # Create user/group
 addgroup --quiet --gid "$YOUTUBEDLPGID" dockeruser
 chown -R "$YOUTUBEDLPUID":"$YOUTUBEDLPGID" /home/dockeruser
-if [[ "$YOUTUBEDLPUID" -gt "1000" ]]; then
-    adduser --quiet --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --home /home/dockeruser dockeruser
+if [[ "$YOUTUBEDLPUID" -gt "999" ]]; then
+    adduser --quiet --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --gecos "" --home /home/dockeruser dockeruser
 elif [[ "$YOUTUBEDLPUID" -gt "100" ]]; then
-    adduser --quiet --system --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --home /home/dockeruser dockeruser
-else 
+    adduser --quiet --system --disabled-password --uid "$YOUTUBEDLPUID" --gid "$YOUTUBEDLPGID" --gecos "" --home /home/dockeruser dockeruser
+else
     echo "PUID must be greater than 100."
     exit 1
 fi
